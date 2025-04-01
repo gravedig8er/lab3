@@ -2,7 +2,7 @@
 #include "String.h"
 
 class List {
-private: 
+public: 
   
   class Node {
   public:
@@ -10,15 +10,23 @@ private:
     Node* pNext; 
 
     Node();
+    Node(String string = String(), Node* pNext = nullptr);
     ~Node();
   };
 
+private:
   int size; // размер списка
   Node* head; // указатель на начало списка
 
 public: 
   List();
   ~List();
-  void GetLength() const;
-  int SetLength(int size);
+  int GetSize() const;
+  void SetSize(int size);
+  void push_back(const String string);
+  Node* GetHead() const; 
+  void SetHead(Node* pNext);
+  void clear();
+  void erase(int index);
+  void unique(); 
 };
